@@ -1,3 +1,11 @@
-import { core } from './core';
+import createCore from './core';
 
-core();
+const core = createCore();
+
+try {
+  core.start();
+  core.stop();
+} catch (err) {
+  console.log('[index] Uncaught error!');
+  console.log(err);
+}
